@@ -1,0 +1,30 @@
+Rules:
+1. Big-O of a polynomial expression can be determined by dropping the lower order terms and constant multiplier
+2. For conditional statements always consider the worst case scenario
+3. The running time of an algorithm can be calculated by summing up that running time of the fragments in the program
+4. The running time of a program is decided by the fragment that has the maximum running time
+
+
+What is the time complexity of the following code :
+1.        int j = 0;
+2.        for(i = 0; i < n; ++i) {
+3.            while(j < n && arr[i] < arr[j]) {
+4.                j++;
+5.            }
+6.       }
+
+Assumptions:
+	1 unit time per assignment
+	1 unit time per arithmetic and logic operations 
+	1 unit time per comparison 
+
+Solution:
+1. T(1) = 1 
+2. T(2) = 1 + n+1 + n+1 = 2n + 3
+3. worst case is when if arr[i] < arr[j] is true => T(3) = n
+4. T(4) = n
+
+T(n) = 1 + 2n + 3 + n + n = 4n + 4
+T(n) = O(1) + O(n) + O(n) + O(n) = O(n)
+
+Answer: O(n)
